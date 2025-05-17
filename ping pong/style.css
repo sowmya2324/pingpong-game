@@ -1,18 +1,18 @@
-body {
+   body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #222;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background-color: #222;
+      font-family: Arial, sans-serif;
       overflow: hidden;
     }
 
     #game-container {
       position: relative;
-      width: 90vw;
+      width: 100%;
       max-width: 800px;
       aspect-ratio: 16 / 10;
       background-color: #000;
@@ -20,11 +20,10 @@ body {
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
 
-    #game-canvas {
+    canvas {
       width: 100%;
       height: 100%;
       display: block;
-      background-color: #000;
     }
 
     #score-display {
@@ -34,12 +33,13 @@ body {
       display: flex;
       justify-content: center;
       color: white;
-      font-size: 2vw;
+      font-size: 28px;
       text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      z-index: 5;
     }
 
     .player-score {
-      margin: 0 20px;
+      margin: 0 30px;
     }
 
     #start-screen,
@@ -49,15 +49,15 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      color: white;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
       z-index: 10;
-      text-align: center;
       padding: 20px;
+      text-align: center;
     }
 
     #game-over-screen {
@@ -65,50 +65,64 @@ body {
     }
 
     h1 {
-      font-size: 3vw;
+      font-size: 36px;
       margin-bottom: 20px;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
 
     button {
-      padding: 10px 20px;
-      font-size: 1.2vw;
+      padding: 12px 24px;
+      font-size: 18px;
       background-color: #4CAF50;
       color: white;
       border: none;
-      border-radius: 5px;
-      margin: 10px;
+      border-radius: 6px;
+      margin: 8px;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     button:hover {
       background-color: #45a049;
+      transform: scale(1.05);
     }
 
     #instructions {
-      font-size: 1vw;
-      margin-top: 10px;
+      margin-top: 20px;
+      font-size: 14px;
     }
 
+    /* Mobile controls */
     #mobile-controls {
-      display: none;
       position: absolute;
       bottom: 10px;
       width: 100%;
+      display: flex;
       justify-content: space-around;
-      z-index: 10;
+      z-index: 11;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     #mobile-controls button {
-      font-size: 1.5vw;
-      padding: 10px 15px;
-      margin: 0 5px;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
     }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 6vw; }
-      button { font-size: 4vw; }
-      #instructions { font-size: 3vw; }
-      #score-display { font-size: 4vw; }
-      #mobile-controls { display: flex; }
+    #mobile-controls button:active {
+      background-color: #45a049;
+    }
+
+    @media (min-width: 768px) {
+      #mobile-controls {
+        display: none;
+      }
     }
