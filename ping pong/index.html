@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Ping Pong Game</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="game-canvas"></canvas>
+
+    <div id="score-display">
+      <div class="player-score" id="player1-score">0</div>
+      <div class="player-score" id="player2-score">0</div>
+    </div>
+
+    <div id="start-screen">
+      <h1>Ping Pong</h1>
+      <button id="start-btn">Start Game</button>
+      <button id="vs-computer-btn">VS Computer</button>
+      <div id="instructions">
+        <p>Player 1: W / S</p>
+        <p>Player 2: ↑ / ↓</p>
+        <p>First to 5 points wins</p>
+      </div>
+    </div>
+
+    <div id="game-over-screen">
+      <h1 id="winner-text">Player 1 Wins!</h1>
+      <button id="play-again-btn">Play Again</button>
+      <button id="main-menu-btn">Main Menu</button>
+    </div>
+
+    <div id="mobile-controls">
+      <div>
+        <button ontouchstart="player1.upPressed=true" ontouchend="player1.upPressed=false">↑ P1</button>
+        <button ontouchstart="player1.downPressed=true" ontouchend="player1.downPressed=false">↓ P1</button>
+      </div>
+      <div>
+        <button ontouchstart="player2.upPressed=true" ontouchend="player2.upPressed=false">↑ P2</button>
+        <button ontouchstart="player2.downPressed=true" ontouchend="player2.downPressed=false">↓ P2</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
