@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Responsive Ping Pong Game</title>
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
   <div id="game-container">
@@ -17,13 +16,13 @@
     </div>
 
     <div id="start-screen">
-      <h1>Ping Pong</h1>
+      <h1>PING PONG</h1>
       <button id="start-btn">Start Game</button>
       <button id="vs-computer-btn">VS Computer</button>
       <div id="instructions">
-        <p>Player 1: W / S</p>
-        <p>Player 2: ↑ / ↓</p>
-        <p>First to 5 points wins</p>
+        <p>Player 1: W / S or ↑ P1 / ↓ P1</p>
+        <p>Player 2: ↑ / ↓ or ↑ P2 / ↓ P2</p>
+        <p>First to 5 points wins!</p>
       </div>
     </div>
 
@@ -33,14 +32,15 @@
       <button id="main-menu-btn">Main Menu</button>
     </div>
 
+    <!-- Mobile Buttons -->
     <div id="mobile-controls">
-      <div>
-        <button ontouchstart="player1.upPressed=true" ontouchend="player1.upPressed=false">↑ P1</button>
-        <button ontouchstart="player1.downPressed=true" ontouchend="player1.downPressed=false">↓ P1</button>
+      <div class="control-group">
+        <button id="p1-up">↑ P1</button>
+        <button id="p1-down">↓ P1</button>
       </div>
-      <div>
-        <button ontouchstart="player2.upPressed=true" ontouchend="player2.upPressed=false">↑ P2</button>
-        <button ontouchstart="player2.downPressed=true" ontouchend="player2.downPressed=false">↓ P2</button>
+      <div class="control-group">
+        <button id="p2-up">↑ P2</button>
+        <button id="p2-down">↓ P2</button>
       </div>
     </div>
   </div>
